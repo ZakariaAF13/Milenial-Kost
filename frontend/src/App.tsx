@@ -1,34 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes, Navigate } from 'react-router-dom'
+import AppLayout from './layouts/AppLayout'
+import Home from './pages/Home'
+import FindKos from './pages/FindKos'
+import Orders from './pages/Orders'
+import CityShow from './pages/CityShow'
+import CategoryShow from './pages/CategoryShow'
+import KosIndex from './pages/KosIndex'
+import KosShow from './pages/KosShow'
+import BottomNav from './components/BottomNav'
+import AdminDashboard from './admin/pages/Dashboard'
+import AdminBoardingHouses from './admin/pages/BoardingHouses'
+import AdminCategories from './admin/pages/Categories'
+import AdminCities from './admin/pages/Cities'
+import AdminTestimonials from './admin/pages/Testimonials'
+import AdminTransactions from './admin/pages/Transactions'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <AppLayout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/find" element={<FindKos />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/city/:slug" element={<CityShow />} />
+        <Route path="/category/:slug" element={<CategoryShow />} />
+        <Route path="/kos" element={<KosIndex />} />
+        <Route path="/kos/:slug" element={<KosShow />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/boarding-houses" element={<AdminBoardingHouses />} />
+        <Route path="/admin/categories" element={<AdminCategories />} />
+        <Route path="/admin/cities" element={<AdminCities />} />
+        <Route path="/admin/testimonials" element={<AdminTestimonials />} />
+        <Route path="/admin/transactions" element={<AdminTransactions />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+      <BottomNav />
+    </AppLayout>
   )
 }
 
