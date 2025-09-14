@@ -10,7 +10,7 @@ const CityShow = () => {
         </Link>
         <h1 className="font-bold text-xl">City: {slug}</h1>
       </div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="responsive-grid">
         {[1, 2, 3, 4].map((i) => (
           <Link key={i} to={`/kos/sample-${i}`} className="card">
             <div className="flex flex-col rounded-[22px] border border-[#F1F2F6] overflow-hidden bg-white">

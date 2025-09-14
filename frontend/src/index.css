@@ -13,6 +13,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* --- Visibility helpers --- */
+.mobile-only {
+  display: block;
+}
+.desktop-only {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .mobile-only {
+    display: none;
+  }
+  .desktop-only {
+    display: block;
+  }
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -24,10 +40,34 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #ffffff; /* override Tailwind body bg from output.css */
+  color: #070707; /* ensure text contrast */
+}
+
+/* ===== Brand Overrides (match blue theme) ===== */
+/* Primary brand blues */
+:root {
+  --brand-blue: #1ea4e9;         /* main */
+  --brand-blue-dark: #117ec2;    /* darker */
+  --brand-blue-light: #5fc1f1;   /* lighter */
+}
+
+/* Override old theme colors used by components */
+.bg-ngekos-black { background-color: var(--brand-blue) !important; }
+.text-ngekos-black { color: #0f172a !important; }
+.bg-ngekos-orange { background-color: var(--brand-blue) !important; }
+.text-ngekos-orange { color: var(--brand-blue) !important; }
+
+/* BottomNav polish */
+#BottomNav .bg-ngekos-black { background-color: var(--brand-blue) !important; }
+#BottomNav a[aria-current="page"],
+#BottomNav a:focus-visible { color: #fff !important; }
+
+/* Reusable hero background */
+.hero-blue-bg {
+  background-image: linear-gradient(180deg, var(--brand-blue-light) 0%, var(--brand-blue) 100%);
 }
 
 h1 {
@@ -64,5 +104,96 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* ===== App responsive enhancements ===== */
+/* Ensure content is visible behind fixed bottom nav */
+#Content-Container {
+  padding-bottom: 138px; /* matches BottomNav height */
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ---- Strong overrides to ensure full-width layout ---- */
+html, body, #root {
+  width: 100%;
+  height: auto;
+}
+
+#root {
+  display: block; /* override Vite template */
+}
+
+/* Make Swiper fill desktop width with multiple columns */
+@media (min-width: 1024px) {
+  .swiper .swiper-slide {
+    width: 25% !important; /* 4 columns on desktop */
+  }
+}
+
+/* Allow full-width on desktop (no max-width caps) */
+@media (min-width: 768px) {
+  #Content-Container {
+    max-width: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  #Content-Container {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  #Content-Container {
+    max-width: none;
+  }
+}
+
+/* Generic responsive grid helpers for pages */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Transform vertical list into grid on desktop */
+.responsive-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .responsive-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Split content into two columns on desktop only */
+.split-2-desktop {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .split-2-desktop {
+    grid-template-columns: 1fr 1fr;
   }
 }

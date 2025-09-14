@@ -6,11 +6,11 @@ const BottomNav = () => {
 
   return (
     <div id="BottomNav" className="relative flex w-full h-[138px] shrink-0">
-      <nav className="fixed bottom-5 w-full max-w-[640px] px-5 z-10">
+      <nav className="fixed bottom-5 w-full px-5 z-10">
         <div className="grid grid-cols-4 h-fit rounded-[40px] justify-between py-4 px-5 bg-ngekos-black">
           <Link to="/" className="flex flex-col items-center text-center gap-2">
             <img
-              src={`/assets/images/icons/global${isActive('/') ? '-green' : ''}.svg`}
+              src={`/assets/images/icons/discover.png`}
               className="w-8 h-8 flex shrink-0"
               alt="icon"
             />
@@ -18,7 +18,7 @@ const BottomNav = () => {
           </Link>
           <Link to="/orders" className="flex flex-col items-center text-center gap-2">
             <img
-              src={`/assets/images/icons/note-favorite${isActive('/orders') ? '-green' : ''}.svg`}
+              src={`/assets/images/icons/note-favorite.svg`}
               className="w-8 h-8 flex shrink-0"
               alt="icon"
             />
@@ -26,7 +26,7 @@ const BottomNav = () => {
           </Link>
           <Link to="/find" className="flex flex-col items-center text-center gap-2">
             <img
-              src={`/assets/images/icons/search-status${isActive('/find') ? '-green' : ''}.svg`}
+              src={`/assets/images/icons/search-status.svg`}
               className="w-8 h-8 flex shrink-0"
               alt="icon"
             />

@@ -17,35 +17,39 @@ const KosShow = () => {
         </Link>
       </div>
 
-      <div className="px-5 mt-5 flex flex-col gap-4">
-        <div className="flex items-center gap-3">
-          <img src="/assets/images/icons/location.svg" alt="loc" className="w-5 h-5" />
-          <p className="text-sm text-ngekos-grey">Bandung</p>
+      <div className="px-5 mt-5 split-2-desktop">
+        {/* Left: Details */}
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center gap-3">
+            <img src="/assets/images/icons/location.svg" alt="loc" className="w-5 h-5" />
+            <p className="text-sm text-ngekos-grey">Bandung</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <img src="/assets/images/icons/profile-2user.svg" alt="cap" className="w-5 h-5" />
+            <p className="text-sm text-ngekos-grey">3 People</p>
+          </div>
+          <p className="text-ngekos-grey">
+            Deskripsi kos singkat. Lokasi strategis, fasilitas lengkap, akses transportasi mudah.
+          </p>
+          <p className="font-semibold text-lg text-ngekos-orange">
+            IDR 1.500.000<span className="text-sm text-ngekos-grey font-normal">/bulan</span>
+          </p>
         </div>
-        <div className="flex items-center gap-3">
-          <img src="/assets/images/icons/profile-2user.svg" alt="cap" className="w-5 h-5" />
-          <p className="text-sm text-ngekos-grey">3 People</p>
-        </div>
-        <p className="text-ngekos-grey">
-          Deskripsi kos singkat. Lokasi strategis, fasilitas lengkap, akses transportasi mudah.
-        </p>
-        <p className="font-semibold text-lg text-ngekos-orange">
-          IDR 1.500.000<span className="text-sm text-ngekos-grey font-normal">/bulan</span>
-        </p>
-      </div>
 
-      <div className="px-5 mt-5">
-        <h2 className="font-bold mb-3">Rooms</h2>
-        <div className="grid grid-cols-2 gap-4">
-          {[1, 2].map((i) => (
-            <div key={i} className="rounded-[22px] border border-[#F1F2F6] overflow-hidden bg-white">
-              <div className="h-[156px] bg-[#D9D9D9]" />
-              <div className="p-4">
-                <p className="font-semibold">Kamar {i}</p>
-                <p className="text-sm text-ngekos-grey">Tersedia</p>
+        {/* Right: Rooms */}
+        <div>
+          <h2 className="font-bold mb-3">Rooms</h2>
+          <div className="responsive-grid">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="rounded-[22px] border border-[#F1F2F6] overflow-hidden bg-white">
+                <div className="h-[156px] bg-[#D9D9D9]" />
+                <div className="p-4">
+                  <p className="font-semibold">Kamar {i}</p>
+                  <p className="text-sm text-ngekos-grey">Tersedia</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 

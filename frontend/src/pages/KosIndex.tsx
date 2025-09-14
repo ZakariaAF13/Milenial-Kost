@@ -4,7 +4,7 @@ const KosIndex = () => {
   return (
     <div className="p-5">
       <h1 className="font-bold text-xl mb-4">All Great Koskos</h1>
-      <div className="flex flex-col gap-4">
+      <div className="responsive-list">
         {[1, 2, 3, 4].map((i) => (
           <Link key={i} to={`/kos/sample-${i}`} className="card">
             <div className="flex rounded-[30px] border border-[#F1F2F6] p-4 gap-4 bg-white hover:border-[#91BF77] transition-all duration-300">
