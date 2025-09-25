@@ -6,7 +6,7 @@ const AdminBoardingHouses = () => {
       <h2 className="font-bold text-xl mb-4">Boarding Houses</h2>
       <div className="flex items-center justify-between mb-4">
         <input className="p-[10px] rounded-[18px] border border-[#F1F2F6] w-full max-w-[320px]" placeholder="Search..." />
-        <button className="ml-4 p-[10px_20px] bg-ngekos-orange text-white rounded-[18px]">Create</button>
+        <button className="ml-4 btn-primary">Create</button>
       </div>
       <div className="rounded-3xl border border-[#F1F2F6] overflow-hidden">
         <table className="w-full">
@@ -27,9 +27,9 @@ const AdminBoardingHouses = () => {
                 <td className="p-4">Campur</td>
                 <td className="p-4">IDR 1.500.000</td>
                 <td className="p-4">
-                  <button className="p-[6px_12px] rounded-[18px] border border-[#F1F2F6] mr-2">View</button>
-                  <button className="p-[6px_12px] rounded-[18px] border border-[#F1F2F6] mr-2">Edit</button>
-                  <button className="p-[6px_12px] rounded-[18px] border border-[#F1F2F6]">Delete</button>
+                  <button className="btn-outline mr-2">View</button>
+                  <button className="btn-outline mr-2">Edit</button>
+                  <button className="btn-danger-outline">Delete</button>
                 </td>
               </tr>
             ))}

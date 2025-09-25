@@ -366,8 +366,8 @@ class ComposerStaticInite5fbbe6137dc77bcd5b6646b5dd75b52
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -411,8 +411,8 @@ class ComposerStaticInite5fbbe6137dc77bcd5b6646b5dd75b52
         ),
         'League\\Uri\\' => 
         array (
-            0 => __DIR__ . '/..' . '/league/uri-interfaces',
-            1 => __DIR__ . '/..' . '/league/uri',
+            0 => __DIR__ . '/..' . '/league/uri',
+            1 => __DIR__ . '/..' . '/league/uri-interfaces',
         ),
         'League\\MimeTypeDetection\\' => 
         array (
@@ -546,7 +546,17 @@ class ComposerStaticInite5fbbe6137dc77bcd5b6646b5dd75b52
     );
 
     public static $classMap = array (
+        'App\\Http\\Controllers\\Api\\Admin\\CategoryAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/Admin/CategoryAdminController.php',
+        'App\\Http\\Controllers\\Api\\BoardingHouseController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/BoardingHouseController.php',
+        'App\\Http\\Controllers\\Api\\BookingController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/BookingController.php',
+        'App\\Http\\Controllers\\Api\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/CategoryController.php',
+        'App\\Http\\Controllers\\Api\\CityController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/CityController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Models\\BoardingHouse' => __DIR__ . '/../..' . '/app/Models/BoardingHouse.php',
+        'App\\Models\\Booking' => __DIR__ . '/../..' . '/app/Models/Booking.php',
+        'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
+        'App\\Models\\City' => __DIR__ . '/../..' . '/app/Models/City.php',
+        'App\\Models\\Room' => __DIR__ . '/../..' . '/app/Models/Room.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

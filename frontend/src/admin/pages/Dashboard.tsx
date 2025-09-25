@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Dashboard = () => {
   return (
     <AdminLayout>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="responsive-grid gap-4">
         <Link to="/admin/boarding-houses" className="p-5 rounded-3xl border border-[#F1F2F6] bg-white">
           <h2 className="font-semibold text-xl">Boarding Houses</h2>
           <p className="text-sm text-ngekos-grey">CRUD data kos</p>

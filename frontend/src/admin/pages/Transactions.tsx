@@ -4,8 +4,8 @@ const AdminTransactions = () => {
   return (
     <AdminLayout>
       <h2 className="font-bold text-xl mb-4">Transactions</h2>
-      <div className="rounded-3xl border border-[#F1F2F6] overflow-hidden">
-        <table className="w-full">
+      <div className="table-responsive rounded-3xl border border-[#F1F2F6] overflow-hidden">
+        <table className="w-full table-sm">
           <thead className="bg-[#F5F6F8]">
             <tr>
               <th className="text-left p-4">Order Code</th>
@@ -24,9 +24,9 @@ const AdminTransactions = () => {
                 <td className="p-4">Kos Nyaman {i}</td>
                 <td className="p-4">IDR 1.500.000</td>
                 <td className="p-4">Pending</td>
-                <td className="p-4">
-                  <button className="p-[6px_12px] rounded-[18px] border border-[#F1F2F6] mr-2">View</button>
-                  <button className="p-[6px_12px] rounded-[18px] border border-[#F1F2F6]">Set Paid</button>
+                <td className="p-4 whitespace-nowrap">
+                  <button className="btn-outline btn-sm mr-2">View</button>
+                  <button className="btn-primary btn-sm">Set Paid</button>
                 </td>
               </tr>
             ))}

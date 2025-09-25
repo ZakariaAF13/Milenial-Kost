@@ -3,7 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* Force light UI for form controls to avoid dark (black) artifacts */
+  color-scheme: light;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
@@ -70,6 +71,64 @@ body {
   background-image: linear-gradient(180deg, var(--brand-blue-light) 0%, var(--brand-blue) 100%);
 }
 
+/* ===== Global form controls (light theme) ===== */
+input,
+select,
+textarea {
+  background-color: #ffffff;
+  color: #070707;
+  border: 1px solid #F1F2F6;
+  border-radius: 18px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #7a7a7a;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 164, 233, 0.25);
+  border-color: var(--brand-blue);
+}
+
+/* Primary button utility */
+.btn-primary {
+  background-color: var(--brand-blue);
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 12px 22px;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: var(--brand-blue-dark);
+}
+
+/* Outline buttons */
+.btn-outline {
+  background-color: #ffffff;
+  color: var(--brand-blue);
+  border: 1px solid var(--brand-blue);
+  border-radius: 18px;
+  padding: 8px 14px;
+}
+.btn-outline:hover {
+  background-color: rgba(30, 164, 233, 0.06);
+}
+
+.btn-danger-outline {
+  background-color: #ffffff;
+  color: #dc2626;
+  border: 1px solid #dc2626;
+  border-radius: 18px;
+  padding: 8px 14px;
+}
+.btn-danger-outline:hover {
+  background-color: rgba(220, 38, 38, 0.06);
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -82,16 +141,40 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: transparent; /* neutral, let classes define colors */
+  color: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: transparent;
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 2px solid var(--brand-blue);
+}
+
+/* Responsive tables for admin */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 640px) {
+  .table-sm th,
+  .table-sm td {
+    padding: 10px !important;
+  }
+  .table-sm {
+    font-size: 14px;
+  }
+}
+
+/* Small button utility (useful in dense tables) */
+.btn-sm {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.9rem;
 }
 
 @media (prefers-color-scheme: light) {
