@@ -58,9 +58,12 @@ const Home = () => {
         className="absolute top-0 w-full h-[280px] rounded-bl-[75px] hero-blue-bg"
       />
       <div id="TopNav" className="relative flex items-center justify-between px-5 mt-[60px]">
-        <div className="flex flex-col gap-1">
-          <p>Good Day,</p>
-          <h1 className="font-bold text-xl leading-[30px]">Explore Milenial Kost</h1>
+        <div className="flex items-center gap-3">
+          <img src="/logoMK.png" alt="MilenialKost logo" className="w-10 h-10 rounded-full shadow" />
+          <div className="flex flex-col gap-1">
+            <p>Good Day,</p>
+            <h1 className="font-bold text-xl leading-[30px]">Explore Milenial Kost</h1>
+          </div>
         </div>
         <a href="#" className="w-12 h-12 flex items-center justify-center shrink-0 rounded-full overflow-hidden bg-white">
           <img src="/assets/images/icons/notification.svg" className="w-[28px] h-[28px]" alt="icon" />
